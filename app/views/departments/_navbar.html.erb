@@ -1,0 +1,11 @@
+<nav>
+  <div class="nav-wrapper">
+    <%= link_to 'Home', departments_path, {class: 'brand-logo'} %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% @departments.each do |department| %>
+        <li><%= link_to department.name, department_items_path(department) %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+

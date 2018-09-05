@@ -1,0 +1,9 @@
+<%= render '/departments/navbar'%>
+<%= @items.each do |item| %>
+  <%= item.name %>
+  <br>
+  <%= item.price %>
+  <br>
+  <%= item.description %>
+  <br>
+<% end %>

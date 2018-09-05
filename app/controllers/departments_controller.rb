@@ -1,4 +1,8 @@
 class DepartmentsController < ApplicationController
+
+  before_action :get_all_departments
+  before_action :get_department, except: [:index, :create, :new]
+
   def index
     @departments = Department.all
   end
@@ -29,6 +33,10 @@ class DepartmentsController < ApplicationController
 
     def get_department
       @department = Department.find(params[:id])
+    end
+
+    def get_all_departments
+      @departments = Department.all
     end
 
     def department_params
